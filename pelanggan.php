@@ -20,7 +20,7 @@ include 'koneksi.php';
             </a>
         </h1>
         <?php
-        if ($_GET['stat'] == 'ubah' && $_GET['id'] != null) {
+        if (@$_GET['stat'] == 'ubah' && @$_GET['id'] != null) {
             $sql = "SELECT * FROM pelanggan WHERE kode_pelanggan = '$_GET[id]'";
             $run = mysqli_query($con, $sql);
             $r = mysqli_fetch_row($run);

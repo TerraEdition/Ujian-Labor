@@ -41,6 +41,8 @@ include 'koneksi.php';
                 $no = 1;
                 $sql = "SELECT transaksi_pencucian.*,pelanggan.* FROM transaksi_pencucian, pelanggan WHERE transaksi_pencucian.kode_pelanggan=pelanggan.kode_pelanggan";
                 $run = mysqli_query($con, $sql);
+                $total_diskon = 0;
+                $total_harga = 0;
                 while ($r = mysqli_fetch_row($run)) {
                     $total_diskon += $r[6];
                     $total_harga += $r[7];
